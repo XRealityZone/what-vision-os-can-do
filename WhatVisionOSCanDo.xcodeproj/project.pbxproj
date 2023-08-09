@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* Item.swift */; };
 		BDFCF0202A8282FA00D7B9FD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */; };
 		BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */; };
 		BDFCF0242A8282FA00D7B9FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0232A8282FA00D7B9FD /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD67E1472A83DF0B00EADBB1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BDFCF01A2A8282FA00D7B9FD /* WhatVisionOSCanDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatVisionOSCanDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFCF01E2A8282FA00D7B9FD /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatVisionOSCanDoApp.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */,
 				BDFCF0232A8282FA00D7B9FD /* ContentView.swift */,
+				BD67E1472A83DF0B00EADBB1 /* Item.swift */,
 				BDFCF0252A8282FA00D7B9FD /* ImmersiveView.swift */,
 				BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */,
 				BDFCF0292A8282FC00D7B9FD /* Preview Content */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */,
 				BDFCF0242A8282FA00D7B9FD /* ContentView.swift in Sources */,
 				BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */,
 				BDFCF0262A8282FA00D7B9FD /* ImmersiveView.swift in Sources */,

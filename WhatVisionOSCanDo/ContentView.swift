@@ -5,45 +5,32 @@
 //  Created by 我就是御姐我摊牌了 on 2023/8/8.
 //
 
-import SwiftUI
 import RealityKit
 import RealityKitContent
+import SwiftUI
 
 struct ContentView: View {
-
-    @State private var showImmersiveSpace = false
+    @State private var selectedItemId: Item.ID?
 
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
 
     var body: some View {
         NavigationSplitView {
-            List {
-                Text("Item")
+            List(Item.allCases, selection: $selectedItemId) { item in
+                Text(item.name)
             }
-            .navigationTitle("Sidebar")
+            .navigationTitle("All Show Cases")
         } detail: {
             VStack {
-                Model3D(named: "Scene", bundle: realityKitContentBundle)
-                    .padding(.bottom, 50)
-
-                Text("Hello, world!")
-
-                Toggle("Show ImmersiveSpace", isOn: $showImmersiveSpace)
-                    .toggleStyle(.button)
-                    .padding(.top, 50)
+                if let selectedItemId, let item = Item.allCases.first(where: { $0.id == selectedItemId.id }) {
+                    Text(item.detail)
+                } else {
+                    Text("Please select an item")
+                }
             }
             .navigationTitle("Content")
             .padding()
-        }
-        .onChange(of: showImmersiveSpace) { _, newValue in
-            Task {
-                if newValue {
-                    await openImmersiveSpace(id: "ImmersiveSpace")
-                } else {
-                    await dismissImmersiveSpace()
-                }
-            }
         }
     }
 }
