@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum Item: String, Identifiable, CaseIterable, Equatable {
-    case video
+    case video, worldScening
     
     var id: Self { self }
     var name: String { rawValue.capitalized }
@@ -17,12 +17,14 @@ enum Item: String, Identifiable, CaseIterable, Equatable {
     var detail: String {
         switch self {
             case .video: "Show 3D Video in visionOS"
+            case .worldScening: "Use ARKit to scene the world"
         }
     }
     
-    var contentView: AnyView {
+    var immersiveSpaceId: String? {
         switch self {
-            case .video: AnyView(Text("Video"))
+            case .worldScening: "WorldScening"
+            default: nil
         }
     }
 }

@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct WhatVisionOSCanDoApp: App {
+    @State var immersiveModel: ImmersiveModel = ImmersiveModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(immersiveModel)
         }
 
-        ImmersiveSpace(id: "ImmersiveSpace") {
+        ImmersiveSpace(id: "WorldScening") {
             ImmersiveView()
         }
     }

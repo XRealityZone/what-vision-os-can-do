@@ -14,6 +14,7 @@
 		BDFCF0262A8282FA00D7B9FD /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0252A8282FA00D7B9FD /* ImmersiveView.swift */; };
 		BDFCF0282A8282FC00D7B9FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */; };
 		BDFCF02B2A8282FC00D7B9FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFCF02A2A8282FC00D7B9FD /* Preview Assets.xcassets */; };
+		D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		BDFCF0252A8282FA00D7B9FD /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
 		BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDFCF02A2A8282FC00D7B9FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D8BE18B02A84ACC300ABA1E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +62,11 @@
 		BDFCF01C2A8282FA00D7B9FD /* WhatVisionOSCanDo */ = {
 			isa = PBXGroup;
 			children = (
+				D8BE18B02A84ACC300ABA1E3 /* Info.plist */,
 				BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */,
 				BDFCF0232A8282FA00D7B9FD /* ContentView.swift */,
 				BD67E1472A83DF0B00EADBB1 /* Item.swift */,
+				D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */,
 				BDFCF0252A8282FA00D7B9FD /* ImmersiveView.swift */,
 				BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */,
 				BDFCF0292A8282FC00D7B9FD /* Preview Content */,
@@ -161,6 +166,7 @@
 				BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */,
 				BDFCF0242A8282FA00D7B9FD /* ContentView.swift in Sources */,
 				BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */,
+				D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */,
 				BDFCF0262A8282FA00D7B9FD /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +303,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WhatVisionOSCanDo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatVisionOSCanDo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,6 +329,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WhatVisionOSCanDo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatVisionOSCanDo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
