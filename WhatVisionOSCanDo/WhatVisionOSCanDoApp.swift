@@ -5,12 +5,14 @@
 //  Created by 我就是御姐我摊牌了 on 2023/8/8.
 //
 
+import ARKit
 import SwiftUI
 
 @main
 struct WhatVisionOSCanDoApp: App {
-    @State var immersiveModel: ImmersiveModel = ImmersiveModel()
-    
+    @State var immersiveModel: ImmersiveModel = .init()
+    @State var session = ARKitSession()
+
     var body: some Scene {
         WindowGroup {
             ContentView().environmentObject(immersiveModel)
@@ -18,6 +20,12 @@ struct WhatVisionOSCanDoApp: App {
 
         ImmersiveSpace(id: "WorldScening") {
             ImmersiveView()
+                .task {
+                    var providers: [DataProvider] = []
+                    if SceneReconstructionProvider.isSupported {
+                        providers.append(SceneReconstructionProvider(modes: [.classification]))
+                    }
+                }
         }
     }
 }

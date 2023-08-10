@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSHandsTrackingUsageDescription</key>
+	<string>Use your hand data to show demo</string>
+	<key>NSWorldSensingUsageDescription</key>
+	<string>Use your world data to show demo</string>
+</dict>
+</plist>
