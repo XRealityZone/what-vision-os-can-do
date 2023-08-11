@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* Item.swift */; };
+		BDC7AD332A85BA17005973D9 /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD322A85BA17005973D9 /* TrackingModel.swift */; };
+		BDC7AD362A868138005973D9 /* GeometrySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD352A868138005973D9 /* GeometrySource.swift */; };
 		BDFCF0202A8282FA00D7B9FD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */; };
 		BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */; };
 		BDFCF0242A8282FA00D7B9FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0232A8282FA00D7B9FD /* ContentView.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		BD67E1472A83DF0B00EADBB1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BDC7AD322A85BA17005973D9 /* TrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModel.swift; sourceTree = "<group>"; };
+		BDC7AD352A868138005973D9 /* GeometrySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometrySource.swift; sourceTree = "<group>"; };
 		BDFCF01A2A8282FA00D7B9FD /* WhatVisionOSCanDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatVisionOSCanDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFCF01E2A8282FA00D7B9FD /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatVisionOSCanDoApp.swift; sourceTree = "<group>"; };
@@ -42,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BDC7AD342A868124005973D9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BDC7AD352A868138005973D9 /* GeometrySource.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		BDFCF0112A8282FA00D7B9FD = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +74,10 @@
 		BDFCF01C2A8282FA00D7B9FD /* WhatVisionOSCanDo */ = {
 			isa = PBXGroup;
 			children = (
+				BDC7AD342A868124005973D9 /* Extension */,
 				D8BE18B02A84ACC300ABA1E3 /* Info.plist */,
 				BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */,
+				BDC7AD322A85BA17005973D9 /* TrackingModel.swift */,
 				BDFCF0232A8282FA00D7B9FD /* ContentView.swift */,
 				BD67E1472A83DF0B00EADBB1 /* Item.swift */,
 				D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */,
@@ -164,9 +178,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */,
+				BDC7AD362A868138005973D9 /* GeometrySource.swift in Sources */,
 				BDFCF0242A8282FA00D7B9FD /* ContentView.swift in Sources */,
 				BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */,
 				D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */,
+				BDC7AD332A85BA17005973D9 /* TrackingModel.swift in Sources */,
 				BDFCF0262A8282FA00D7B9FD /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

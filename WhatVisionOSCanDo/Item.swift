@@ -2,7 +2,7 @@
 //  Item.swift
 //  WhatVisionOSCanDo
 //
-//  Created by 我就是御姐我摊牌了 on 2023/8/9.
+//  Created by onee on 2023/8/9.
 //
 
 import Foundation
