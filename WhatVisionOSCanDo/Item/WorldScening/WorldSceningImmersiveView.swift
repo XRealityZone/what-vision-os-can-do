@@ -5,11 +5,14 @@
 //  Created by onee on 2023/8/8.
 //
 
-import SwiftUI
+import ARKit
 import RealityKit
 import RealityKitContent
+import SwiftUI
 
-struct ImmersiveView: View {
+struct WorldSceningImmersiveView: View {
+    let model = WorldSceningTrackingModel()
+
     var body: some View {
         RealityView { content in
             // Add the initial RealityKit content
@@ -17,10 +20,17 @@ struct ImmersiveView: View {
                 content.add(scene)
             }
         }
+        .task {
+            await model.run(
+                enableGeoMesh: true,
+                enablePlaneClassification: true,
+                enableMeshClassfication: true
+            )
+        }
     }
 }
 
 #Preview {
-    ImmersiveView()
+    WorldSceningImmersiveView()
         .previewLayout(.sizeThatFits)
 }

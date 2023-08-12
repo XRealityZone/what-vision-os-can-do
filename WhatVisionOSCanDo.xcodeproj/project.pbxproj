@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* Item.swift */; };
-		BDC7AD332A85BA17005973D9 /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD322A85BA17005973D9 /* TrackingModel.swift */; };
+		BDC7AD332A85BA17005973D9 /* WorldSceningTrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD322A85BA17005973D9 /* WorldSceningTrackingModel.swift */; };
 		BDC7AD362A868138005973D9 /* GeometrySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD352A868138005973D9 /* GeometrySource.swift */; };
 		BDFCF0202A8282FA00D7B9FD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */; };
 		BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */; };
 		BDFCF0242A8282FA00D7B9FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0232A8282FA00D7B9FD /* ContentView.swift */; };
-		BDFCF0262A8282FA00D7B9FD /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0252A8282FA00D7B9FD /* ImmersiveView.swift */; };
+		BDFCF0262A8282FA00D7B9FD /* WorldSceningImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0252A8282FA00D7B9FD /* WorldSceningImmersiveView.swift */; };
 		BDFCF0282A8282FC00D7B9FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */; };
 		BDFCF02B2A8282FC00D7B9FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFCF02A2A8282FC00D7B9FD /* Preview Assets.xcassets */; };
 		D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */; };
@@ -21,13 +21,13 @@
 
 /* Begin PBXFileReference section */
 		BD67E1472A83DF0B00EADBB1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		BDC7AD322A85BA17005973D9 /* TrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModel.swift; sourceTree = "<group>"; };
+		BDC7AD322A85BA17005973D9 /* WorldSceningTrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldSceningTrackingModel.swift; sourceTree = "<group>"; };
 		BDC7AD352A868138005973D9 /* GeometrySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometrySource.swift; sourceTree = "<group>"; };
 		BDFCF01A2A8282FA00D7B9FD /* WhatVisionOSCanDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatVisionOSCanDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFCF01E2A8282FA00D7B9FD /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatVisionOSCanDoApp.swift; sourceTree = "<group>"; };
 		BDFCF0232A8282FA00D7B9FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BDFCF0252A8282FA00D7B9FD /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		BDFCF0252A8282FA00D7B9FD /* WorldSceningImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldSceningImmersiveView.swift; sourceTree = "<group>"; };
 		BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDFCF02A2A8282FC00D7B9FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D8BE18B02A84ACC300ABA1E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +54,23 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		BDD15AD82A87BFD3005477F5 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				BDD15AD92A87BFE1005477F5 /* WorldScening */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		BDD15AD92A87BFE1005477F5 /* WorldScening */ = {
+			isa = PBXGroup;
+			children = (
+				BDFCF0252A8282FA00D7B9FD /* WorldSceningImmersiveView.swift */,
+				BDC7AD322A85BA17005973D9 /* WorldSceningTrackingModel.swift */,
+			);
+			path = WorldScening;
+			sourceTree = "<group>";
+		};
 		BDFCF0112A8282FA00D7B9FD = {
 			isa = PBXGroup;
 			children = (
@@ -74,14 +91,13 @@
 		BDFCF01C2A8282FA00D7B9FD /* WhatVisionOSCanDo */ = {
 			isa = PBXGroup;
 			children = (
+				BDD15AD82A87BFD3005477F5 /* Item */,
 				BDC7AD342A868124005973D9 /* Extension */,
 				D8BE18B02A84ACC300ABA1E3 /* Info.plist */,
 				BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */,
-				BDC7AD322A85BA17005973D9 /* TrackingModel.swift */,
 				BDFCF0232A8282FA00D7B9FD /* ContentView.swift */,
 				BD67E1472A83DF0B00EADBB1 /* Item.swift */,
 				D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */,
-				BDFCF0252A8282FA00D7B9FD /* ImmersiveView.swift */,
 				BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */,
 				BDFCF0292A8282FC00D7B9FD /* Preview Content */,
 			);
@@ -182,8 +198,8 @@
 				BDFCF0242A8282FA00D7B9FD /* ContentView.swift in Sources */,
 				BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */,
 				D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */,
-				BDC7AD332A85BA17005973D9 /* TrackingModel.swift in Sources */,
-				BDFCF0262A8282FA00D7B9FD /* ImmersiveView.swift in Sources */,
+				BDC7AD332A85BA17005973D9 /* WorldSceningTrackingModel.swift in Sources */,
+				BDFCF0262A8282FA00D7B9FD /* WorldSceningImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
