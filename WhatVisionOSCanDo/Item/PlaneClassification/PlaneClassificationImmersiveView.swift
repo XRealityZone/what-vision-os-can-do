@@ -5,9 +5,10 @@
 
 import SwiftUI
 import RealityKit
+import RealityKitContent
 
 struct PlaneClassificationImmersiveView: View {
-    @State var model = 
+    @State var model =  PlaneClassificationTrackingModel()
     
     var body: some View {
         RealityView { content in
@@ -18,8 +19,7 @@ struct PlaneClassificationImmersiveView: View {
         }
         .task {
             await model.run(
-                enableGeoMesh: true,
-                enableMeshClassfication: true
+                enablePlaneClassification: true
             )
         }
         .onDisappear {

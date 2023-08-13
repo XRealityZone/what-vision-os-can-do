@@ -10,16 +10,18 @@ import RealityKit
 class PlaneClassificationTrackingModel: TrackingModel {
     let planeDataProvider = PlaneDetectionProvider(alignments: [.horizontal, .vertical])
     
-    @MainActor func run(enableGeoMesh: Bool, enableMeshClassfication: Bool) async {
+    @MainActor func run(enablePlaneClassification: Bool) async {
         var providers: [DataProvider] = []
         if PlaneDetectionProvider.isSupported {
             providers.append(planeDataProvider)
         }
         do {
             try await session.run(providers)
-            for await sceneUpdate in planeDataProvider.anchorUpdates {
-                // print classifications
-                try await updatePlaneEntity(sceneUpdate.anchor)
+            if enablePlaneClassification {
+                for await sceneUpdate in planeDataProvider.anchorUpdates {
+                        // print classifications
+                    try await updatePlaneEntity(sceneUpdate.anchor)
+                }                
             }
         } catch {
             print("error is \(error)")
