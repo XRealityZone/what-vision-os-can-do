@@ -10,27 +10,16 @@ import Foundation
 import RealityKit
 import ARKit
 
-struct WorldSceningTrackingModel {
-    let session = ARKitSession()
-    var rootEntity = AnchorEntity(world: .zero)
-    let planeDataProvider = PlaneDetectionProvider(alignments: [.horizontal, .vertical])
+class WorldSceningTrackingModel: TrackingModel {
     let sceneDataProvider = SceneReconstructionProvider(modes: [.classification])
     
-    
-    @MainActor func run(enableGeoMesh: Bool, enablePlaneClassification: Bool, enableMeshClassfication: Bool) async {
+    @MainActor func run(enableGeoMesh: Bool, enableMeshClassfication: Bool) async {
         var providers: [DataProvider] = []
-        if PlaneDetectionProvider.isSupported {
-            providers.append(planeDataProvider)
-        }
         if SceneReconstructionProvider.isSupported {
             providers.append(sceneDataProvider)
         }
         do {
             try await session.run(providers)
-            for await sceneUpdate in planeDataProvider.anchorUpdates {
-                // print classifications
-                let classification = sceneUpdate.anchor.classification
-            }
             for await sceneUpdate in sceneDataProvider.anchorUpdates {
                 let anchor = sceneUpdate.anchor
                 let geometry = anchor.geometry

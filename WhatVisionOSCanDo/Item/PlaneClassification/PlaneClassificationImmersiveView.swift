@@ -1,18 +1,14 @@
 //
-//  ImmersiveView.swift
-//  WhatVisionOSCanDo
-//
-//  Created by onee on 2023/8/8.
+// WhatVisionOSCanDo
+// Created by: onee on 2023/8/13
 //
 
-import ARKit
-import RealityKit
-import RealityKitContent
 import SwiftUI
+import RealityKit
 
-struct WorldSceningImmersiveView: View {
-    let model = WorldSceningTrackingModel()
-
+struct PlaneClassificationImmersiveView: View {
+    @State var model = 
+    
     var body: some View {
         RealityView { content in
             // Add the initial RealityKit content
@@ -33,6 +29,5 @@ struct WorldSceningImmersiveView: View {
 }
 
 #Preview {
-    WorldSceningImmersiveView()
-        .previewLayout(.sizeThatFits)
+    PlaneClassificationImmersiveView()
 }
