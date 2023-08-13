@@ -9,7 +9,7 @@ import RealityKit
 import AVFoundation
 import RealityKitContent
 
-let DEFAULT_VIDEO_URL = Bundle.main.url(forResource: "sample", withExtension: "mp4")!
+let DEFAULT_VIDEO_URL = Bundle.main.url(forResource: "Ordesa National", withExtension: "mp4")!
 
 struct PanoramaVideoModel {
     let rootEntity = Entity()
@@ -23,7 +23,7 @@ struct PanoramaVideoModel {
         let material = VideoMaterial(avPlayer: avPlayer)
 
         let sphere = try! Entity.load(named: "Scenes/PanoramaVideo", in: realityKitContentBundle)
-        sphere.scale = .init(x: 1E3, y: 1E3, z: 1E3)
+        sphere.scale = .init(x: 1000, y: 1000, z: 1000)
 
         let modelEntity = sphere.children[0].children[0] as! ModelEntity
         modelEntity.model?.materials = [material]

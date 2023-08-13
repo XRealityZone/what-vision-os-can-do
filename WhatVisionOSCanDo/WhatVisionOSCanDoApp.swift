@@ -21,6 +21,10 @@ struct WhatVisionOSCanDoApp: App {
         ImmersiveSpace(id: "WorldScening") {
             WorldSceningImmersiveView()
         }
+        
+        ImmersiveSpace(id: "PalneClassification") {
+            PlaneClassificationImmersiveView()
+        }
 
         ImmersiveSpace(id: "PanoramaVideo") {
             PanoramaVideoImmersiveView().environmentObject(immersiveModel)
