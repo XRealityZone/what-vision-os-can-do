@@ -21,6 +21,19 @@ enum Item: String, Identifiable, CaseIterable, Equatable {
         }
     }
     
+    var windowDestination: AnyView? {
+        switch self {
+            case .video: AnyView(VideoController())
+            default: nil
+        }
+    }
+    
+    var windowId: String? {
+        switch self {
+            default: nil
+        }
+    }
+    
     var immersiveSpaceId: String? {
         switch self {
             case .worldScening: "WorldScening"

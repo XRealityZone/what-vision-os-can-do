@@ -15,11 +15,15 @@ struct WhatVisionOSCanDoApp: App {
 
     var body: some SwiftUI.Scene {
         WindowGroup {
-            ContentView().environmentObject(immersiveModel)
+            Home().environmentObject(immersiveModel)
         }
 
         ImmersiveSpace(id: "WorldScening") {
             WorldSceningImmersiveView()
         }
+        
+        ImmersiveSpace(id: "PanoramaVideo") {
+            PanoramaVideoImmersiveView().environmentObject(immersiveModel)
+        }.immersionStyle(selection: .constant(.full))
     }
 }
