@@ -6,5 +6,16 @@
 	<string>Use your hand data to show demo</string>
 	<key>NSWorldSensingUsageDescription</key>
 	<string>Use your world data to show demo</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationPreferredDefaultSceneSessionRole</key>
+		<string>UIWindowSceneSessionRoleApplication</string>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+		<key>UIWindowSceneSessionRoleApplication</key>
+		<string>UIWindowSceneSessionRoleApplication</string>
+	</dict>
 </dict>
 </plist>

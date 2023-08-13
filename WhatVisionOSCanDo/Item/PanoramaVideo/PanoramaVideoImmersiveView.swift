@@ -22,12 +22,6 @@ struct PanoramaVideoImmersiveView: View {
                 model.pause()
             }
         }
-        .onAppear() {
-            model.play()
-        }
-        .onDisappear() {
-            model.pause()
-        }
     }
 }
 

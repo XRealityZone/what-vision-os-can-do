@@ -21,9 +21,9 @@ struct WhatVisionOSCanDoApp: App {
         ImmersiveSpace(id: "WorldScening") {
             WorldSceningImmersiveView()
         }
-        
+
         ImmersiveSpace(id: "PanoramaVideo") {
             PanoramaVideoImmersiveView().environmentObject(immersiveModel)
-        }.immersionStyle(selection: .constant(.full))
+        }.immersionStyle(selection: .constant(.full), in: .full)
     }
 }
