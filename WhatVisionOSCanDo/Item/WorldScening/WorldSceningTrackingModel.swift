@@ -29,7 +29,7 @@ struct WorldSceningTrackingModel {
             try await session.run(providers)
             for await sceneUpdate in planeDataProvider.anchorUpdates {
                 // print classifications
-                let geometry = sceneUpdate.anchor.geometry
+                let classification = sceneUpdate.anchor.classification
             }
             for await sceneUpdate in sceneDataProvider.anchorUpdates {
                 let anchor = sceneUpdate.anchor
@@ -78,7 +78,7 @@ struct WorldSceningTrackingModel {
     
     // MARK: Helpers
     
-    fileprivate func generateModelEntity(geometry: MeshAnchor.Geometry) async throws -> ModelEntity {
+    @MainActor fileprivate func generateModelEntity(geometry: MeshAnchor.Geometry) async throws -> ModelEntity {
         // generate mesh
         var desc = MeshDescriptor()
         let posValues = geometry.vertices.asSIMD3(ofType: Float.self)
@@ -98,7 +98,7 @@ struct WorldSceningTrackingModel {
         }
         let meshResource = try await MeshResource.generate(from: [desc])
         let material = SimpleMaterial(color: .red, isMetallic: false)
-        let modelEntity = await ModelEntity(mesh: meshResource, materials: [material])
+        let modelEntity = ModelEntity(mesh: meshResource, materials: [material])
         return modelEntity
     }
 }
