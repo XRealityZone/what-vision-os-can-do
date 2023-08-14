@@ -9,7 +9,7 @@ import RealityKit
 import AVFoundation
 import RealityKitContent
 
-let DEFAULT_VIDEO_URL = Bundle.main.url(forResource: "Ordesa National", withExtension: "mp4")!
+let DEFAULT_VIDEO_URL = Bundle.main.url(forResource: "sample", withExtension: "mp4")!
 
 struct PanoramaVideoModel {
     let rootEntity = Entity()
