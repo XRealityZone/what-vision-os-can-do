@@ -16,6 +16,10 @@
 		BD3B39F42A891CBD00B8FCE9 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */; };
 		BD5640742A88C1080001856F /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5640732A88C1080001856F /* TrackingModel.swift */; };
 		BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* Item.swift */; };
+		BDA935D52A89910700D2D675 /* Ordesa National.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BDA935D42A89910700D2D675 /* Ordesa National.mp4 */; };
+		BDA935D92A89A41500D2D675 /* PlayTogtherActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */; };
+		BDA935DB2A89C84C00D2D675 /* PlayTogtherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */; };
+		BDA935DD2A89DF4800D2D675 /* PlayTogtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DC2A89DF4800D2D675 /* PlayTogtherView.swift */; };
 		BDC7AD332A85BA17005973D9 /* WorldSceningTrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD322A85BA17005973D9 /* WorldSceningTrackingModel.swift */; };
 		BDC7AD362A868138005973D9 /* GeometrySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD352A868138005973D9 /* GeometrySource.swift */; };
 		BDFCF0202A8282FA00D7B9FD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */; };
@@ -37,6 +41,11 @@
 		BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		BD5640732A88C1080001856F /* TrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModel.swift; sourceTree = "<group>"; };
 		BD67E1472A83DF0B00EADBB1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BDA935D42A89910700D2D675 /* Ordesa National.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ordesa National.mp4"; sourceTree = "<group>"; };
+		BDA935D62A899FCB00D2D675 /* WhatVisionOSCanDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatVisionOSCanDo.entitlements; sourceTree = "<group>"; };
+		BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogtherActivity.swift; sourceTree = "<group>"; };
+		BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogtherManager.swift; sourceTree = "<group>"; };
+		BDA935DC2A89DF4800D2D675 /* PlayTogtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogtherView.swift; sourceTree = "<group>"; };
 		BDC7AD322A85BA17005973D9 /* WorldSceningTrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldSceningTrackingModel.swift; sourceTree = "<group>"; };
 		BDC7AD352A868138005973D9 /* GeometrySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometrySource.swift; sourceTree = "<group>"; };
 		BDFCF01A2A8282FA00D7B9FD /* WhatVisionOSCanDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatVisionOSCanDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,9 +93,20 @@
 		BD3B39F22A891C8900B8FCE9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BDA935D42A89910700D2D675 /* Ordesa National.mp4 */,
 				BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		BDA935D72A89A40400D2D675 /* SharePlay */ = {
+			isa = PBXGroup;
+			children = (
+				BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */,
+				BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */,
+				BDA935DC2A89DF4800D2D675 /* PlayTogtherView.swift */,
+			);
+			path = SharePlay;
 			sourceTree = "<group>";
 		};
 		BDC7AD342A868124005973D9 /* Extension */ = {
@@ -101,6 +121,7 @@
 		BDD15AD82A87BFD3005477F5 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				BDA935D72A89A40400D2D675 /* SharePlay */,
 				BD3B39E92A8902D300B8FCE9 /* PanoramaVideo */,
 				BD3B39E22A88FE1900B8FCE9 /* PlaneClassification */,
 				BDD15AD92A87BFE1005477F5 /* WorldScening */,
@@ -137,6 +158,7 @@
 		BDFCF01C2A8282FA00D7B9FD /* WhatVisionOSCanDo */ = {
 			isa = PBXGroup;
 			children = (
+				BDA935D62A899FCB00D2D675 /* WhatVisionOSCanDo.entitlements */,
 				BD3B39F22A891C8900B8FCE9 /* Resource */,
 				BDD15AD82A87BFD3005477F5 /* Item */,
 				BDC7AD342A868124005973D9 /* Extension */,
@@ -231,6 +253,7 @@
 			files = (
 				BDFCF02B2A8282FC00D7B9FD /* Preview Assets.xcassets in Resources */,
 				BD3B39F42A891CBD00B8FCE9 /* sample.mp4 in Resources */,
+				BDA935D52A89910700D2D675 /* Ordesa National.mp4 in Resources */,
 				BDFCF0282A8282FC00D7B9FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,12 +272,15 @@
 				BD5640742A88C1080001856F /* TrackingModel.swift in Sources */,
 				BDFCF0242A8282FA00D7B9FD /* Home.swift in Sources */,
 				BD3B39EC2A8903C400B8FCE9 /* PanoramaVideoImmersiveView.swift in Sources */,
+				BDA935D92A89A41500D2D675 /* PlayTogtherActivity.swift in Sources */,
 				BD3B39E62A88FE6000B8FCE9 /* PlaneClassificationImmersiveView.swift in Sources */,
 				BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */,
 				BD3B39E42A88FE5B00B8FCE9 /* PlaneClassificationTrackingModel .swift in Sources */,
 				D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */,
 				BDC7AD332A85BA17005973D9 /* WorldSceningTrackingModel.swift in Sources */,
+				BDA935DD2A89DF4800D2D675 /* PlayTogtherView.swift in Sources */,
 				BDFCF0262A8282FA00D7B9FD /* WorldSceningImmersiveView.swift in Sources */,
+				BDA935DB2A89C84C00D2D675 /* PlayTogtherManager.swift in Sources */,
 				BD3B39F12A890C1500B8FCE9 /* VideoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhatVisionOSCanDo/WhatVisionOSCanDo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatVisionOSCanDo/Preview Content\"";
@@ -412,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhatVisionOSCanDo/WhatVisionOSCanDo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatVisionOSCanDo/Preview Content\"";

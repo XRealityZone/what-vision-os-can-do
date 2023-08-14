@@ -15,13 +15,18 @@ struct WhatVisionOSCanDoApp: App {
 
     var body: some SwiftUI.Scene {
         WindowGroup {
-            Home().environmentObject(immersiveModel)
+            Home()
+                .environmentObject(immersiveModel)
+                .handlesExternalEvents(
+                    preferring: [PlayTogtherActivity.activityIdentifier],
+                    allowing: [PlayTogtherActivity.activityIdentifier]
+                )
         }
 
         ImmersiveSpace(id: "WorldScening") {
             WorldSceningImmersiveView()
         }
-        
+
         ImmersiveSpace(id: "PalneClassification") {
             PlaneClassificationImmersiveView()
         }
