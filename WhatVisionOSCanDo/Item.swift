@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum Item: String, Identifiable, CaseIterable, Equatable {
-    case video, worldScening, planeClassification, sharePlay
+    case video, worldScening, planeClassification, sharePlay, handTracking
     
     var id: Self { self }
     var name: String { rawValue.capitalized }
@@ -20,6 +20,7 @@ enum Item: String, Identifiable, CaseIterable, Equatable {
             case .worldScening: "Use ARKit to scene the world"
             case .planeClassification: "Use ARKit to classification the plane"
             case .sharePlay: "Show the SharePlay in visionOS"
+            case .handTracking: "Tracking the hand movement"
         }
     }
     
@@ -41,6 +42,7 @@ enum Item: String, Identifiable, CaseIterable, Equatable {
         switch self {
             case .worldScening: "WorldScening"
             case .planeClassification: "PalneClassification"
+            case .handTracking: "HandTracking"
             default: nil
         }
     }
