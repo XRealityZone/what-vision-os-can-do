@@ -16,7 +16,6 @@
 		BD3B39F42A891CBD00B8FCE9 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */; };
 		BD5640742A88C1080001856F /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5640732A88C1080001856F /* TrackingModel.swift */; };
 		BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* Item.swift */; };
-		BDA935D52A89910700D2D675 /* Ordesa National.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BDA935D42A89910700D2D675 /* Ordesa National.mp4 */; };
 		BDA935D92A89A41500D2D675 /* PlayTogtherActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */; };
 		BDA935DB2A89C84C00D2D675 /* PlayTogtherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */; };
 		BDA935DD2A89DF4800D2D675 /* PlayTogtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DC2A89DF4800D2D675 /* PlayTogtherView.swift */; };
@@ -43,7 +42,6 @@
 		BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		BD5640732A88C1080001856F /* TrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModel.swift; sourceTree = "<group>"; };
 		BD67E1472A83DF0B00EADBB1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		BDA935D42A89910700D2D675 /* Ordesa National.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ordesa National.mp4"; sourceTree = "<group>"; };
 		BDA935D62A899FCB00D2D675 /* WhatVisionOSCanDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatVisionOSCanDo.entitlements; sourceTree = "<group>"; };
 		BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogtherActivity.swift; sourceTree = "<group>"; };
 		BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogtherManager.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 		BD3B39F22A891C8900B8FCE9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				BDA935D42A89910700D2D675 /* Ordesa National.mp4 */,
 				BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */,
 			);
 			path = Resource;
@@ -267,7 +264,6 @@
 			files = (
 				BDFCF02B2A8282FC00D7B9FD /* Preview Assets.xcassets in Resources */,
 				BD3B39F42A891CBD00B8FCE9 /* sample.mp4 in Resources */,
-				BDA935D52A89910700D2D675 /* Ordesa National.mp4 in Resources */,
 				BDFCF0282A8282FC00D7B9FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
