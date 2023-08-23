@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 enum Item: String, Identifiable, CaseIterable, Equatable {
-    case video, worldScening, planeClassification, sharePlay, handTracking
-    
+    case video, worldScening, planeClassification, sharePlay, handTracking, targetPlane
+
     var id: Self { self }
     var name: String { rawValue.capitalized }
 
@@ -21,9 +21,10 @@ enum Item: String, Identifiable, CaseIterable, Equatable {
             case .planeClassification: "Use ARKit to classification the plane"
             case .sharePlay: "Show the SharePlay in visionOS"
             case .handTracking: "Tracking the hand movement"
+            case .targetPlane: "Place Entity onto target plane"
         }
     }
-    
+
     var windowDestination: AnyView? {
         switch self {
             case .video: AnyView(VideoController())
@@ -31,18 +32,19 @@ enum Item: String, Identifiable, CaseIterable, Equatable {
             default: nil
         }
     }
-    
+
     var windowId: String? {
         switch self {
             default: nil
         }
     }
-    
+
     var immersiveSpaceId: String? {
         switch self {
             case .worldScening: "WorldScening"
             case .planeClassification: "PalneClassification"
             case .handTracking: "HandTracking"
+            case .targetPlane: "TargetPlane"
             default: nil
         }
     }
