@@ -40,6 +40,12 @@ struct Home: View {
                             }, label: {
                                 Text("Tap to goto window for the scene")
                             })
+                        } else if let volumeId = item.volumeId {
+                            Button(action: {
+                                openWindow(id: volumeId)
+                            }, label: {
+                                Text("Tap to goto volume for the scene")
+                            })
                         } else if let immseriveSpaceId = item.immersiveSpaceId {
                             Toggle("Show Immersive", isOn: $immersiveModel.isShowImmersive)
                                 .onChange(of: immersiveModel.isShowImmersive) { wasShowing, _ in

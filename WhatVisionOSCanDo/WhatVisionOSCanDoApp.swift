@@ -22,6 +22,10 @@ struct WhatVisionOSCanDoApp: App {
                     allowing: [PlayTogtherActivity.activityIdentifier]
                 )
         }
+        
+        WindowGroup(id: "Gesture") {
+            GestureView()
+        }.windowStyle(.volumetric)
 
         ImmersiveSpace(id: "WorldScening") {
             WorldSceningImmersiveView()

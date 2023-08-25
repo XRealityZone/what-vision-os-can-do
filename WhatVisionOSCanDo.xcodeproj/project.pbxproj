@@ -31,6 +31,7 @@
 		BDFCF02B2A8282FC00D7B9FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDFCF02A2A8282FC00D7B9FD /* Preview Assets.xcassets */; };
 		D84B2BCD2A96113F00D4DC14 /* TargetPlaneImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84B2BCB2A96113F00D4DC14 /* TargetPlaneImmersiveView.swift */; };
 		D84B2BCE2A96113F00D4DC14 /* TargetPlaneTrackingModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = D84B2BCC2A96113F00D4DC14 /* TargetPlaneTrackingModel .swift */; };
+		D84B2BD12A98516600D4DC14 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84B2BD02A98516600D4DC14 /* GestureView.swift */; };
 		D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		BDFCF02A2A8282FC00D7B9FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D84B2BCB2A96113F00D4DC14 /* TargetPlaneImmersiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetPlaneImmersiveView.swift; sourceTree = "<group>"; };
 		D84B2BCC2A96113F00D4DC14 /* TargetPlaneTrackingModel .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TargetPlaneTrackingModel .swift"; sourceTree = "<group>"; };
+		D84B2BD02A98516600D4DC14 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
 		D8BE18B02A84ACC300ABA1E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 		BDD15AD82A87BFD3005477F5 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				D84B2BCF2A98513D00D4DC14 /* Gesture */,
 				D84B2BCA2A96112100D4DC14 /* TargetPlane */,
 				BDA935DE2A8A631C00D2D675 /* HandTracking */,
 				BDA935D72A89A40400D2D675 /* SharePlay */,
@@ -213,6 +216,14 @@
 				D84B2BCC2A96113F00D4DC14 /* TargetPlaneTrackingModel .swift */,
 			);
 			path = TargetPlane;
+			sourceTree = "<group>";
+		};
+		D84B2BCF2A98513D00D4DC14 /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				D84B2BD02A98516600D4DC14 /* GestureView.swift */,
+			);
+			path = Gesture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 				D84B2BCD2A96113F00D4DC14 /* TargetPlaneImmersiveView.swift in Sources */,
 				BDA935DB2A89C84C00D2D675 /* PlayTogtherManager.swift in Sources */,
 				BD3B39F12A890C1500B8FCE9 /* VideoController.swift in Sources */,
+				D84B2BD12A98516600D4DC14 /* GestureView.swift in Sources */,
 				D84B2BCE2A96113F00D4DC14 /* TargetPlaneTrackingModel .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
