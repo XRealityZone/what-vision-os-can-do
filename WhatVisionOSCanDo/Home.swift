@@ -24,7 +24,6 @@ struct Home: View {
                 Text(item.name)
             }
             .onChange(of: selectedItemId, { oldValue, newValue in
-                print("old value is \(String(describing: oldValue)), newValue is \(String(describing: newValue))")
                 if immersiveModel.isShowImmersive {
                     Task {
                         immersiveModel.isShowImmersive = false
