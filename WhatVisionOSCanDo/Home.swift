@@ -15,6 +15,7 @@ struct Home: View {
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     @Environment(\.openWindow) var openWindow
+    @Environment(\.dismissWindow) var dismissWindow
     @EnvironmentObject var immersiveModel: ImmersiveModel
 
     var body: some View {
@@ -22,6 +23,19 @@ struct Home: View {
             List(Item.allCases, selection: $selectedItemId) { item in
                 Text(item.name)
             }
+            .onChange(of: selectedItemId, { oldValue, newValue in
+                print("old value is \(String(describing: oldValue)), newValue is \(String(describing: newValue))")
+                if immersiveModel.isShowImmersive {
+                    Task {
+                        immersiveModel.isShowImmersive = false
+                        await dismissImmersiveSpace()
+                    }
+                }
+                if immersiveModel.isShowWidow {
+                    immersiveModel.isShowWidow = false
+                    dismissWindow()
+                }
+            })
             .navigationTitle("All Show Cases")
         } detail: {
             NavigationStack(path: $immersiveModel.navigationPath) {
@@ -36,12 +50,14 @@ struct Home: View {
                             })
                         } else if let windowId = item.windowId {
                             Button(action: {
+                                immersiveModel.isShowWidow = true
                                 openWindow(id: windowId)
                             }, label: {
                                 Text("Tap to goto window for the scene")
                             })
                         } else if let volumeId = item.volumeId {
                             Button(action: {
+                                immersiveModel.isShowWidow = true
                                 openWindow(id: volumeId)
                             }, label: {
                                 Text("Tap to goto volume for the scene")
