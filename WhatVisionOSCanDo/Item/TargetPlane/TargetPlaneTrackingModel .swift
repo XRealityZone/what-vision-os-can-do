@@ -6,14 +6,19 @@
 import ARKit
 import Foundation
 import RealityKit
+import RealityKitContent
 
 class TargetPlaneTrackingModel: TrackingModel {
     let planeDataProvider = PlaneDetectionProvider(alignments: [.horizontal, .vertical])
     
     @MainActor func run() async {
-        let anchorEntity = AnchorEntity(.plane(.vertical, classification: .wall, minimumBounds: simd_float2(x: 0.5, y: 0.5)))
-        let modelEntity = ModelEntity(mesh: .generateSphere(radius: 0.5), materials: [SimpleMaterial(color: .red, isMetallic: false)])
-        anchorEntity.addChild(modelEntity)
-        rootEntity.addChild(anchorEntity)
+        do {
+            let anchorEntity = AnchorEntity(.plane(.horizontal, classification: .table, minimumBounds: simd_float2(x: 0.2, y: 0.2)))
+            let modelEntity = try await Entity.init(named: "Scenes/TargetPlane", in: realityKitContentBundle)
+            anchorEntity.addChild(modelEntity)
+            rootEntity.addChild(anchorEntity)
+        } catch {
+            print("error is \(error)")
+        }
     }
 }
