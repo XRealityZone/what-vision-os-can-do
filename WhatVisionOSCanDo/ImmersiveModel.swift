@@ -8,8 +8,8 @@
 import Foundation
 
 class ImmersiveModel: ObservableObject {
-    @Published var isShowImmersive: Bool = false
-    @Published var isShowWidow: Bool = false
+    @Published var immersiveSpaceId: String? = nil
+    @Published var windowId: String? = nil
     @Published var isPlayVideo: Bool = false
     @Published var navigationPath: [Item] = []
 }

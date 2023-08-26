@@ -23,18 +23,18 @@ struct Home: View {
             List(Item.allCases, selection: $selectedItemId) { item in
                 Text(item.name)
             }
-            .onChange(of: selectedItemId, { oldValue, newValue in
-                if immersiveModel.isShowImmersive {
+            .onChange(of: selectedItemId) { _, _ in
+                if let _ = immersiveModel.immersiveSpaceId {
                     Task {
-                        immersiveModel.isShowImmersive = false
+                        immersiveModel.immersiveSpaceId = nil
                         await dismissImmersiveSpace()
                     }
                 }
-                if immersiveModel.isShowWidow {
-                    immersiveModel.isShowWidow = false
-                    dismissWindow()
+                if let id = immersiveModel.windowId {
+                    immersiveModel.windowId = nil
+                    dismissWindow(id: id)
                 }
-            })
+            }
             .navigationTitle("All Show Cases")
         } detail: {
             NavigationStack(path: $immersiveModel.navigationPath) {
@@ -49,30 +49,31 @@ struct Home: View {
                             })
                         } else if let windowId = item.windowId {
                             Button(action: {
-                                immersiveModel.isShowWidow = true
+                                immersiveModel.windowId = windowId
                                 openWindow(id: windowId)
                             }, label: {
                                 Text("Tap to goto window for the scene")
                             })
                         } else if let volumeId = item.volumeId {
                             Button(action: {
-                                immersiveModel.isShowWidow = true
+                                immersiveModel.windowId = volumeId
                                 openWindow(id: volumeId)
                             }, label: {
                                 Text("Tap to goto volume for the scene")
                             })
                         } else if let immseriveSpaceId = item.immersiveSpaceId {
-                            Toggle("Show Immersive", isOn: $immersiveModel.isShowImmersive)
-                                .onChange(of: immersiveModel.isShowImmersive) { wasShowing, _ in
-                                    Task {
-                                        if wasShowing {
-                                            await dismissImmersiveSpace()
-                                        } else {
-                                            await openImmersiveSpace(id: immseriveSpaceId)
-                                        }
+                            Toggle("Show Immersive", isOn: Binding(get: {
+                                immersiveModel.immersiveSpaceId != nil
+                            }, set: { value in
+                                Task {
+                                    if value {
+                                        await openImmersiveSpace(id: immseriveSpaceId)
+                                    } else {
+                                        await dismissImmersiveSpace()
                                     }
                                 }
-                                .toggleStyle(.button)
+                            }))
+                            .toggleStyle(.button)
                         }
                     } else {
                         Text("Please select an item")
