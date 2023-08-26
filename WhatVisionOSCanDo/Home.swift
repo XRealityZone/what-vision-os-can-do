@@ -67,8 +67,10 @@ struct Home: View {
                             }, set: { value in
                                 Task {
                                     if value {
+                                        immersiveModel.immersiveSpaceId = immseriveSpaceId
                                         await openImmersiveSpace(id: immseriveSpaceId)
                                     } else {
+                                        immersiveModel.immersiveSpaceId = nil
                                         await dismissImmersiveSpace()
                                     }
                                 }
