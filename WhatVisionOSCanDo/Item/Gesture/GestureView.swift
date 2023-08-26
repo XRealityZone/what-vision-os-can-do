@@ -18,7 +18,6 @@ struct GestureView: View {
 
     var body: some View {
         VStack {
-            Text("Hello World")
             RealityView { content in
                 do {
                     let entity = try await Entity(named: "Scenes/Gesture", in: realityKitContentBundle)
@@ -27,6 +26,24 @@ struct GestureView: View {
                     print("load entity error, error is \(error)")
                 }
             }
+            .gesture(enabledGesture == .tap ?TapGesture().targetedToAnyEntity().onEnded { _ in
+                print("TapGesture ended")
+            } : nil)
+            .gesture(enabledGesture == .drag ?DragGesture().targetedToAnyEntity().onEnded { _ in
+                print("DragGesture ended")
+            } : nil)
+            .gesture(enabledGesture == .longPress ?LongPressGesture().targetedToAnyEntity().onEnded { _ in
+                print("LongPressGesture ended")
+            } : nil)
+            .gesture(enabledGesture == .magnify ? MagnifyGesture().targetedToAnyEntity().onEnded { _ in
+                print("MagnifyGesture ended")
+            } : nil)
+            .gesture(enabledGesture == .rotate ?RotateGesture().targetedToAnyEntity().onEnded { _ in
+                print("RotateGesture ended")
+            } : nil)
+            .gesture(enabledGesture == .rotate3D ?RotateGesture3D(constrainedToAxis: .z).targetedToAnyEntity().onEnded { _ in
+                print("RotateGesture3D ended")
+            } : nil)
             HStack {
                 Toggle("Tap", isOn: Binding(get: {
                     enabledGesture == .tap
@@ -65,24 +82,6 @@ struct GestureView: View {
                 }))
                 .toggleStyle(.button)
             }
-            .gesture(enabledGesture == .tap ? TapGesture().targetedToAnyEntity().onEnded { _ in
-                print("TapGesture ended")
-            } : nil)
-            .gesture(enabledGesture == .drag ?DragGesture().targetedToAnyEntity().onEnded { _ in
-                print("DragGesture ended")
-            } : nil)
-            .gesture(enabledGesture == .longPress ?LongPressGesture().targetedToAnyEntity().onEnded { _ in
-                print("LongPressGesture ended")
-            } : nil)
-            .gesture(enabledGesture == .magnify ? MagnifyGesture().targetedToAnyEntity().onEnded { _ in
-                print("MagnifyGesture ended")
-            } : nil)
-            .gesture(enabledGesture == .rotate ?RotateGesture().targetedToAnyEntity().onEnded { _ in
-                print("RotateGesture ended")
-            } : nil)
-            .gesture(enabledGesture == .rotate3D ?RotateGesture3D(constrainedToAxis: .x).targetedToAnyEntity().onEnded { _ in
-                print("RotateGesture3D ended")
-            } : nil)
         }
     }
 }
