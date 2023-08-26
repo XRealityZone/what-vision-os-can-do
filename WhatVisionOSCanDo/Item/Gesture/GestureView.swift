@@ -26,22 +26,23 @@ struct GestureView: View {
                     print("load entity error, error is \(error)")
                 }
             }
-            .gesture(enabledGesture == .tap ?TapGesture().targetedToAnyEntity().onEnded { _ in
+            .gesture(enabledGesture == .tap ? TapGesture().targetedToAnyEntity().onEnded { _ in
                 print("TapGesture ended")
             } : nil)
-            .gesture(enabledGesture == .drag ?DragGesture().targetedToAnyEntity().onEnded { _ in
-                print("DragGesture ended")
+            .gesture(enabledGesture == .drag ? DragGesture().targetedToAnyEntity().onChanged { value in
+                let location = value.convert(value.gestureValue.location3D, from: .global, to: value.entity.parent!)
+                value.entity.setPosition(location, relativeTo: value.entity.parent)
             } : nil)
-            .gesture(enabledGesture == .longPress ?LongPressGesture().targetedToAnyEntity().onEnded { _ in
+            .gesture(enabledGesture == .longPress ? LongPressGesture().targetedToAnyEntity().onEnded { _ in
                 print("LongPressGesture ended")
             } : nil)
             .gesture(enabledGesture == .magnify ? MagnifyGesture().targetedToAnyEntity().onEnded { _ in
                 print("MagnifyGesture ended")
             } : nil)
-            .gesture(enabledGesture == .rotate ?RotateGesture().targetedToAnyEntity().onEnded { _ in
+            .gesture(enabledGesture == .rotate ? RotateGesture().targetedToAnyEntity().onEnded { _ in
                 print("RotateGesture ended")
             } : nil)
-            .gesture(enabledGesture == .rotate3D ?RotateGesture3D(constrainedToAxis: .z).targetedToAnyEntity().onEnded { _ in
+            .gesture(enabledGesture == .rotate3D ? RotateGesture3D(constrainedToAxis: .z).targetedToAnyEntity().onEnded { _ in
                 print("RotateGesture3D ended")
             } : nil)
             HStack {
