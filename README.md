@@ -17,8 +17,8 @@ Currently this series is updated at least once a week. If you are interested in 
 
 | ID          | Preview                                                      | Article |
 | ----------- | ------------------------------------------------------------ | ------- |
-| Get Started | ![image-20230827154736791](./DocAssets/image-20230827154736791.png) |         |
-| Video       | ![video](./DocAssets/video.gif)                              |         |
+| Get Started | ![image](https://github.com/XRealityZone/what-vision-os-can-do/assets/8003181/db8dddfe-ea36-41f2-9c4c-921bf82f6ba4) |         |
+| Video       |  ![video](https://github.com/XRealityZone/what-vision-os-can-do/assets/8003181/0c1fbed5-7b58-49f3-88fa-b891cc814dfd)|         |
 
 
 
