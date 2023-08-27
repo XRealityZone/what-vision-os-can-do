@@ -10,17 +10,26 @@ import RealityKitContent
 import SwiftUI
 
 struct Home: View {
-    @State private var selectedItemId: ShowCase.ID?
-
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     @Environment(\.openWindow) var openWindow
     @Environment(\.dismissWindow) var dismissWindow
     @EnvironmentObject var immersiveModel: ImmersiveModel
 
+    @State private var searchText = ""
+    @State private var selectedItemId: ShowCase.ID?
+
+    var searchedResults: [ShowCase] {
+        if searchText.isEmpty {
+            return ShowCase.allCases
+        } else {
+            return ShowCase.allCases.filter { $0.rawValue.contains(searchText) }
+        }
+    }
+
     var body: some View {
         NavigationSplitView {
-            List(ShowCase.allCases, selection: $selectedItemId) { item in
+            List(searchedResults, selection: $selectedItemId) { item in
                 Text(item.name)
             }
             .onChange(of: selectedItemId) { _, _ in
@@ -85,6 +94,7 @@ struct Home: View {
                 .padding()
             }
         }
+        .searchable(text: $searchText)
     }
 }
 
