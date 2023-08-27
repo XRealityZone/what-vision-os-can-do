@@ -15,7 +15,7 @@
 		BD3B39F12A890C1500B8FCE9 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B39F02A890C1500B8FCE9 /* VideoController.swift */; };
 		BD3B39F42A891CBD00B8FCE9 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */; };
 		BD5640742A88C1080001856F /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5640732A88C1080001856F /* TrackingModel.swift */; };
-		BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* Item.swift */; };
+		BD67E1482A83DF0B00EADBB1 /* ShowCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* ShowCase.swift */; };
 		BDA935D92A89A41500D2D675 /* PlayTogtherActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */; };
 		BDA935DB2A89C84C00D2D675 /* PlayTogtherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */; };
 		BDA935DD2A89DF4800D2D675 /* PlayTogtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DC2A89DF4800D2D675 /* PlayTogtherView.swift */; };
@@ -44,7 +44,7 @@
 		BD3B39F02A890C1500B8FCE9 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		BD5640732A88C1080001856F /* TrackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingModel.swift; sourceTree = "<group>"; };
-		BD67E1472A83DF0B00EADBB1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BD67E1472A83DF0B00EADBB1 /* ShowCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCase.swift; sourceTree = "<group>"; };
 		BDA935D62A899FCB00D2D675 /* WhatVisionOSCanDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatVisionOSCanDo.entitlements; sourceTree = "<group>"; };
 		BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogtherActivity.swift; sourceTree = "<group>"; };
 		BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogtherManager.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 				D8BE18B02A84ACC300ABA1E3 /* Info.plist */,
 				BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */,
 				BDFCF0232A8282FA00D7B9FD /* Home.swift */,
-				BD67E1472A83DF0B00EADBB1 /* Item.swift */,
+				BD67E1472A83DF0B00EADBB1 /* ShowCase.swift */,
 				D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */,
 				BD5640732A88C1080001856F /* TrackingModel.swift */,
 				BDFCF0272A8282FC00D7B9FD /* Assets.xcassets */,
@@ -301,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD3B39E82A89004B00B8FCE9 /* PlaneAnchor.swift in Sources */,
-				BD67E1482A83DF0B00EADBB1 /* Item.swift in Sources */,
+				BD67E1482A83DF0B00EADBB1 /* ShowCase.swift in Sources */,
 				BDC7AD362A868138005973D9 /* GeometrySource.swift in Sources */,
 				BD3B39ED2A8903C400B8FCE9 /* PanoramaVideoTrackingModel .swift in Sources */,
 				BD5640742A88C1080001856F /* TrackingModel.swift in Sources */,

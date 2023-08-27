@@ -10,7 +10,7 @@ import RealityKitContent
 import SwiftUI
 
 struct Home: View {
-    @State private var selectedItemId: Item.ID?
+    @State private var selectedItemId: ShowCase.ID?
 
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
@@ -20,7 +20,7 @@ struct Home: View {
 
     var body: some View {
         NavigationSplitView {
-            List(Item.allCases, selection: $selectedItemId) { item in
+            List(ShowCase.allCases, selection: $selectedItemId) { item in
                 Text(item.name)
             }
             .onChange(of: selectedItemId) { _, _ in
@@ -39,30 +39,30 @@ struct Home: View {
         } detail: {
             NavigationStack(path: $immersiveModel.navigationPath) {
                 VStack {
-                    if let selectedItemId, let item = Item.allCases.first(where: { $0.id == selectedItemId.id }) {
+                    if let selectedItemId, let item = ShowCase.allCases.first(where: { $0.id == selectedItemId.id }) {
                         Text(item.detail)
                         if let destination = item.windowDestination {
                             NavigationLink(destination: {
                                 destination
                             }, label: {
-                                Text("Tap to goto window for the scene")
+                                Text("Tap to navigate to the window for the scene")
                             })
                         } else if let windowId = item.windowId {
                             Button(action: {
                                 immersiveModel.windowId = windowId
                                 openWindow(id: windowId)
                             }, label: {
-                                Text("Tap to goto window for the scene")
+                                Text("Tap to open window for the scene")
                             })
                         } else if let volumeId = item.volumeId {
                             Button(action: {
                                 immersiveModel.windowId = volumeId
                                 openWindow(id: volumeId)
                             }, label: {
-                                Text("Tap to goto volume for the scene")
+                                Text("Tap to open volume for the scene")
                             })
                         } else if let immseriveSpaceId = item.immersiveSpaceId {
-                            Toggle("Show Immersive", isOn: Binding(get: {
+                            Toggle("Toggle to get into ImmersiveSpace", isOn: Binding(get: {
                                 immersiveModel.immersiveSpaceId != nil
                             }, set: { value in
                                 Task {

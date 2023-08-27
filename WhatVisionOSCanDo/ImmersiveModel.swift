@@ -11,5 +11,5 @@ class ImmersiveModel: ObservableObject {
     @Published var immersiveSpaceId: String? = nil
     @Published var windowId: String? = nil
     @Published var isPlayVideo: Bool = false
-    @Published var navigationPath: [Item] = []
+    @Published var navigationPath: [ShowCase] = []
 }
