@@ -15,6 +15,7 @@ struct VideoController: View {
             Spacer()
             VStack {
                 Spacer()
+                
                 Button(action: {
                     immseriveModel.isPlayVideo.toggle()
                 }, label: {
@@ -29,7 +30,12 @@ struct VideoController: View {
             Spacer()
         }
         .task {
-            await openImmersiveSpace(id: "PanoramaVideo")
+            if let _ = immseriveModel.immersiveSpaceId {
+                await dismissImmersiveSpace()
+            } else {
+                await openImmersiveSpace(id: "PanoramaVideo")
+                immseriveModel.immersiveSpaceId = "PanoramaVideo"
+            }
         }
         .onDisappear() {
             Task {
