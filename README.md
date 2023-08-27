@@ -17,7 +17,7 @@ Currently this series is updated at least once a week. If you are interested in 
 
 | ID          | Preview                                                      | Article |
 | ----------- | ------------------------------------------------------------ | ------- |
-| Get Started | ![Uploading All Show Cases.png…]() ![All Show Cases](https://github.com/XRealityZone/what-vision-os-can-do/assets/8003181/7beeb57e-1b41-478e-a0ab-8fb71ada7923)|         |
+| Get Started |  ![All Show Cases](https://github.com/XRealityZone/what-vision-os-can-do/assets/8003181/7beeb57e-1b41-478e-a0ab-8fb71ada7923)|         |
 | Video       |  ![video](https://github.com/XRealityZone/what-vision-os-can-do/assets/8003181/0c1fbed5-7b58-49f3-88fa-b891cc814dfd)|         |
 
 
