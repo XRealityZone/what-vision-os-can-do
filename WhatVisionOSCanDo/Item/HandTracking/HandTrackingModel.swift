@@ -31,7 +31,7 @@ class HandTrackingModel: TrackingModel {
                         // Publish updates only if the hand and the relevant joints are tracked.
                         guard anchor.isTracked else { continue }
                         guard let handSkeleton = anchor.handSkeleton else { continue }
-                        updateFingerEnity(idPrefix: anchor.chirality.description, rootTransform: anchor.transform, skeleton: handSkeleton)
+                        updateFingerEnity(idPrefix: anchor.chirality.description, rootTransform: anchor.originFromAnchorTransform, skeleton: handSkeleton)
                     default:
                         break
                     }
@@ -65,7 +65,7 @@ class HandTrackingModel: TrackingModel {
             let name = "\(idPrefix)-\(joint.name)"
             if let entity = rootEntity.findEntity(named: name) {
                 if joint.isTracked {
-                    entity.setTransformMatrix(rootTransform * joint.rootTransform, relativeTo: nil)
+                    entity.setTransformMatrix(rootTransform * joint.anchorFromJointTransform, relativeTo: nil)
                     entity.scale = simd_float3(repeating: 0.01)
                     entity.isEnabled = true
                 } else {
@@ -76,7 +76,7 @@ class HandTrackingModel: TrackingModel {
                 guard joint.isTracked else { continue }
                 let entity = ModelEntity(mesh: .generateSphere(radius: 1), materials: [SimpleMaterial(color: .red, isMetallic: false)])
                 entity.name = name
-                entity.setTransformMatrix(rootTransform * joint.rootTransform, relativeTo: nil)
+                entity.setTransformMatrix(rootTransform * joint.anchorFromJointTransform, relativeTo: nil)
                 entity.scale = simd_float3(repeating: 0.01)
                 rootEntity.addChild(entity)
             }

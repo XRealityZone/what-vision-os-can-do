@@ -38,7 +38,7 @@ class PlaneClassificationTrackingModel: TrackingModel {
             anchorEntity.addChild(modelEntity)
             anchorEntity.addChild(textEntity)
         } else {
-            let anchorEntity = AnchorEntity(world: anchor.transform)
+            let anchorEntity = AnchorEntity(world: anchor.originFromAnchorTransform)
             // NOTE: 需要翻转 -90 度
             anchorEntity.orientation = .init(angle: -.pi / 2, axis: .init(1, 0, 0))
             anchorEntity.addChild(modelEntity)

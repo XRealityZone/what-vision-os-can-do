@@ -45,7 +45,7 @@ class WorldSceningTrackingModel: TrackingModel {
     
     @MainActor fileprivate  func createMeshEntity(_ geometry: MeshAnchor.Geometry, _ anchor: MeshAnchor) async throws  {
         let modelEntity = try await generateModelEntity(geometry: geometry)
-        let anchorEntity = AnchorEntity(world: anchor.transform)
+        let anchorEntity = AnchorEntity(world: anchor.originFromAnchorTransform)
         anchorEntity.addChild(modelEntity)
         anchorEntity.name = "MeshAnchor-\(anchor.id)"
         rootEntity.addChild(anchorEntity)
