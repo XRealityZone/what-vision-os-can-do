@@ -4,12 +4,13 @@
 //
 
 import ARKit
+import AVFoundation
 import Foundation
 import RealityKit
-import AVFoundation
 import RealityKitContent
 
 let DEFAULT_VIDEO_URL = Bundle.main.url(forResource: "sample", withExtension: "mp4")!
+let RADIUS: Float = 1000
 
 struct PanoramaVideoModel {
     let rootEntity = Entity()
@@ -19,17 +20,14 @@ struct PanoramaVideoModel {
         let asset = AVAsset(url: url)
         let playerItem = AVPlayerItem(asset: asset)
         avPlayer.replaceCurrentItem(with: playerItem)
-        
+
         let material = VideoMaterial(avPlayer: avPlayer)
 
-        let sphere = try! Entity.load(named: "Scenes/PanoramaVideo", in: realityKitContentBundle)
-        sphere.scale = .init(x: 1000, y: 1000, z: 1000)
-
-        let modelEntity = sphere.children[0].children[0] as! ModelEntity
-        modelEntity.model?.materials = [material]
+        let sphere = ModelEntity(mesh: .generateSphere(radius: RADIUS))
+        sphere.model?.materials = [material]
+        sphere.scale *= .init(x: -1, y: 1, z: 1)
 
         rootEntity.addChild(sphere)
-        rootEntity.scale *= .init(x: -1, y: 1, z: 1)
     }
 
     func play() {
@@ -39,7 +37,7 @@ struct PanoramaVideoModel {
     func pause() {
         avPlayer.pause()
     }
-    
+
     func stop() {
         avPlayer.pause()
         avPlayer.seek(to: .zero)
