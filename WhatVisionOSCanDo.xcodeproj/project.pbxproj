@@ -134,7 +134,7 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		BDD15AD82A87BFD3005477F5 /* Item */ = {
+		BDD15AD82A87BFD3005477F5 /* ShowCase */ = {
 			isa = PBXGroup;
 			children = (
 				D84B2BCF2A98513D00D4DC14 /* Gesture */,
@@ -145,7 +145,7 @@
 				BD3B39E22A88FE1900B8FCE9 /* PlaneClassification */,
 				BDD15AD92A87BFE1005477F5 /* WorldScening */,
 			);
-			path = Item;
+			path = ShowCase;
 			sourceTree = "<group>";
 		};
 		BDD15AD92A87BFE1005477F5 /* WorldScening */ = {
@@ -179,7 +179,7 @@
 			children = (
 				BDA935D62A899FCB00D2D675 /* WhatVisionOSCanDo.entitlements */,
 				BD3B39F22A891C8900B8FCE9 /* Resource */,
-				BDD15AD82A87BFD3005477F5 /* Item */,
+				BDD15AD82A87BFD3005477F5 /* ShowCase */,
 				BDC7AD342A868124005973D9 /* Extension */,
 				D8BE18B02A84ACC300ABA1E3 /* Info.plist */,
 				BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */,
