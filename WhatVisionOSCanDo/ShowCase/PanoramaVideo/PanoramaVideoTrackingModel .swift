@@ -39,4 +39,9 @@ struct PanoramaVideoModel {
     func pause() {
         avPlayer.pause()
     }
+    
+    func stop() {
+        avPlayer.pause()
+        avPlayer.seek(to: .zero)
+    }
 }

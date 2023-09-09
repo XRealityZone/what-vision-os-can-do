@@ -29,8 +29,7 @@ class HandTrackingModel: TrackingModel {
                         let anchor = update.anchor
 
                         // Publish updates only if the hand and the relevant joints are tracked.
-                        guard anchor.isTracked else { continue }
-                        guard let handSkeleton = anchor.handSkeleton else { continue }
+                        guard anchor.isTracked, let handSkeleton = anchor.handSkeleton else { continue }
                         updateFingerEnity(idPrefix: anchor.chirality.description, rootTransform: anchor.originFromAnchorTransform, skeleton: handSkeleton)
                     default:
                         break
