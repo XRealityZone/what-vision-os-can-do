@@ -9,7 +9,7 @@ def Xform "Root"
 {
     def "Moon" (
         active = true
-        prepend references = @../Moon.usdz@
+        references = @../Models/Moon.usdz@
     )
     {
         float3 xformOp:scale = (1, 1, 1)
@@ -33,6 +33,15 @@ def Xform "Root"
                 token shapeType = "Box"
             }
         }
+    }
+
+    def "Sun" (
+        active = false
+        prepend references = @../Models/Sun.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
     }
 }
 
