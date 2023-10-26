@@ -15,6 +15,8 @@ enum GestureToggles {
 
 struct GestureView: View {
     @State private var enabledGesture: GestureToggles = .tap
+    @State private var isNight: Bool = true
+    
 
     var body: some View {
         VStack {
@@ -25,9 +27,16 @@ struct GestureView: View {
                 } catch {
                     print("load entity error, error is \(error)")
                 }
+            } update: { content in
+                let root = content.entities.first
+                let moon = root?.findEntity(named: "Moon")
+                let sun = root?.findEntity(named: "Sun")
+                moon?.components[OpacityComponent.self]?.opacity = isNight ? 1.0 : 0.0
+                sun?.components[OpacityComponent.self]?.opacity = isNight ? 0.0 : 1.0
             }
-            .gesture(enabledGesture == .tap ? TapGesture().targetedToAnyEntity().onEnded { _ in
+            .gesture(enabledGesture == .tap ? TapGesture().targetedToAnyEntity().onEnded { event in
                 print("TapGesture ended")
+                isNight = !isNight
             } : nil)
             .gesture(enabledGesture == .drag ? DragGesture().targetedToAnyEntity().onChanged { value in
                 let location = value.convert(value.gestureValue.location3D, from: .global, to: value.entity.parent!)
