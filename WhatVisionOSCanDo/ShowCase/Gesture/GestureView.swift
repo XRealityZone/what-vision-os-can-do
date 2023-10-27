@@ -17,7 +17,7 @@ enum GestureToggles {
 struct GestureView: View {
     @State private var enabledGesture: GestureToggles = .tap
     @State private var isNight: Bool = true
-    
+    @State private var scale: Float = 1.0
 
     var body: some View {
         VStack {
@@ -34,7 +34,9 @@ struct GestureView: View {
                 let moon = root?.findEntity(named: "Moon")
                 let sun = root?.findEntity(named: "Sun")
                 moon?.components[OpacityComponent.self]?.opacity = isNight ? 1.0 : 0.0
+                moon?.scale = .init(x: scale, y: scale, z: scale)
                 sun?.components[OpacityComponent.self]?.opacity = isNight ? 0.0 : 1.0
+                sun?.scale = .init(x: scale, y: scale, z: scale)
             }
             .gesture(enabledGesture == .tap ? TapGesture().targetedToAnyEntity().onEnded { event in
                 print("TapGesture ended")
@@ -46,6 +48,11 @@ struct GestureView: View {
             } : nil)
             .gesture(enabledGesture == .longPress ? LongPressGesture().targetedToAnyEntity().onEnded { _ in
                 print("LongPressGesture ended")
+                if scale == 1.0 {
+                    scale = 2.0
+                } else {
+                    scale = 1.0
+                }
             } : nil)
             .gesture(enabledGesture == .magnify ? MagnifyGesture().targetedToAnyEntity().onEnded { _ in
                 print("MagnifyGesture ended")
