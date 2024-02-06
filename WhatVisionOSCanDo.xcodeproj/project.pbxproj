@@ -34,6 +34,7 @@
 		D84B2BCE2A96113F00D4DC14 /* TargetPlaneTrackingModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = D84B2BCC2A96113F00D4DC14 /* TargetPlaneTrackingModel .swift */; };
 		D84B2BD12A98516600D4DC14 /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84B2BD02A98516600D4DC14 /* GestureView.swift */; };
 		D8BE18B22A84AD7C00ABA1E3 /* ImmersiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */; };
+		D8DB7D322B720D6900084EDF /* WindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB7D312B720D6900084EDF /* WindowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		D84B2BD02A98516600D4DC14 /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
 		D8BE18B02A84ACC300ABA1E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D8BE18B12A84AD7C00ABA1E3 /* ImmersiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveModel.swift; sourceTree = "<group>"; };
+		D8DB7D312B720D6900084EDF /* WindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		BDD15AD82A87BFD3005477F5 /* ShowCase */ = {
 			isa = PBXGroup;
 			children = (
+				D8DB7D302B720D5C00084EDF /* Window */,
 				D84B2BCF2A98513D00D4DC14 /* Gesture */,
 				D84B2BCA2A96112100D4DC14 /* TargetPlane */,
 				BDA935DE2A8A631C00D2D675 /* HandTracking */,
@@ -228,6 +231,14 @@
 			path = Gesture;
 			sourceTree = "<group>";
 		};
+		D8DB7D302B720D5C00084EDF /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				D8DB7D312B720D6900084EDF /* WindowView.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,6 +326,7 @@
 				BD3B39EC2A8903C400B8FCE9 /* PanoramaVideoImmersiveView.swift in Sources */,
 				BDA935D92A89A41500D2D675 /* PlayTogtherActivity.swift in Sources */,
 				BD3B39E62A88FE6000B8FCE9 /* PlaneClassificationImmersiveView.swift in Sources */,
+				D8DB7D322B720D6900084EDF /* WindowView.swift in Sources */,
 				BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */,
 				BDA935E02A8A632C00D2D675 /* HandTrackingView.swift in Sources */,
 				BD3B39E42A88FE5B00B8FCE9 /* PlaneClassificationTrackingModel .swift in Sources */,

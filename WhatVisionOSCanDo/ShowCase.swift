@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum ShowCase: String, Identifiable, CaseIterable, Equatable {
-    case PanoramaVideo, WorldReconstruction, PlaneClassification, SharePlay, HandTracking, TargetPlane, Gesture
+    case PanoramaVideo, WorldReconstruction, PlaneClassification, SharePlay, HandTracking, TargetPlane, Gesture, Window
 
     var id: Self { self }
     var name: String { rawValue }
@@ -23,6 +23,7 @@ enum ShowCase: String, Identifiable, CaseIterable, Equatable {
             case .HandTracking: "Tracking the hand movement"
             case .TargetPlane: "Place Entity onto target plane"
             case .Gesture: "Gesture in 3D"
+            case .Window: "What window can show in 3D space"
         }
     }
 
@@ -30,6 +31,7 @@ enum ShowCase: String, Identifiable, CaseIterable, Equatable {
         switch self {
             case .PanoramaVideo: AnyView(VideoController())
             case .SharePlay: AnyView(PlayTogtherView())
+            case .Window: AnyView(WindowView())
             default: nil
         }
     }
@@ -42,7 +44,7 @@ enum ShowCase: String, Identifiable, CaseIterable, Equatable {
 
     var volumeId: String? {
         switch self {
-        case .Gesture: "Gesture"
+            case .Gesture: "Gesture"
             default: nil
         }
     }
