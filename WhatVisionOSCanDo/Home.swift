@@ -18,6 +18,10 @@ struct Home: View {
 
     @State private var searchText = ""
     @State private var selectedItemId: ShowCase.ID?
+    
+    init() {
+        initRealityKitContent()
+    }
 
     var searchedResults: [ShowCase] {
         if searchText.isEmpty {

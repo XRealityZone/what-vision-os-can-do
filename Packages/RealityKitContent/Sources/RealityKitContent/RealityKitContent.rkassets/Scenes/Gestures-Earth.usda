@@ -1,0 +1,210 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "Earth" (
+        references = @../Models/Earth.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0.23555335, 0, 0.0015026187)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitCustomComponent "RealityKitContent_EarthComponent"
+        {
+            uniform token info:id = "RealityKitContent.EarthComponent"
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
+
+        def RealityKitComponent "HierarchicalFade"
+        {
+            uniform token info:id = "RealityKit.HierarchicalFade"
+            float opacity = 1
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.20499998, 0.205, 0.20500001)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0.00004060194, 0, 0.00011316314)
+                }
+            }
+        }
+
+        over "geom"
+        {
+            over "realistic"
+            {
+                over "materials"
+                {
+                    over "usdpreviewsurface8sg"
+                    {
+                        token outputs:mtlx:surface.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_mat_mtlx.outputs:out>
+                        token outputs:surface.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_mat.outputs:surface>
+
+                        over "earth_realistic_mat"
+                        {
+                            color3f inputs:diffuseColor.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_bc_1.outputs:rgb>
+                            normal3f inputs:normal.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_n_1.outputs:rgb>
+                            float inputs:occlusion.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_ao_1.outputs:r>
+                            float inputs:roughness.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_r_1.outputs:r>
+                        }
+
+                        over "earth_realistic_r_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/place2dTexture26.outputs:result>
+                        }
+
+                        over "earth_realistic_bc_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/place2dTexture24.outputs:result>
+                        }
+
+                        over "earth_realistic_n_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/place2dTexture25.outputs:result>
+                        }
+
+                        over "earth_realistic_ao_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/place2dTexture23.outputs:result>
+                        }
+
+                        over "earth_realistic_mat_mtlx"
+                        {
+                            color3f inputs:diffuseColor.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_bc_1_mtlx.outputs:out>
+                            float3 inputs:normal.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_n_1_mtlx_offset.outputs:out>
+                            float inputs:occlusion.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_ao_1_mtlx.outputs:out>
+                            float inputs:roughness.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_r_1_mtlx.outputs:out>
+                        }
+
+                        over "earth_realistic_n_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/Lookup_st.outputs:out>
+                        }
+
+                        over "earth_realistic_n_1_mtlx_scale"
+                        {
+                            float3 inputs:in1.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_n_1_mtlx.outputs:out>
+                        }
+
+                        over "earth_realistic_n_1_mtlx_offset"
+                        {
+                            float3 inputs:in1.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/earth_realistic_n_1_mtlx_scale.outputs:out>
+                        }
+
+                        over "earth_realistic_bc_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/Lookup_st.outputs:out>
+                        }
+
+                        over "earth_realistic_ao_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/Lookup_st.outputs:out>
+                        }
+
+                        over "earth_realistic_r_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface8sg/Lookup_st.outputs:out>
+                        }
+                    }
+
+                    over "usdpreviewsurface7sg"
+                    {
+                        token outputs:mtlx:surface.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_mat_mtlx.outputs:out>
+                        token outputs:surface.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_mat.outputs:surface>
+
+                        over "earth_clouds_realistic_mat"
+                        {
+                            color3f inputs:diffuseColor.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_bc_1.outputs:rgb>
+                            normal3f inputs:normal.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_n_1.outputs:rgb>
+                            float inputs:opacity.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_o_1.outputs:r>
+                            float inputs:roughness.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_r_1.outputs:r>
+                        }
+
+                        over "earth_clouds_realistic_bc_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/place2dTexture18.outputs:result>
+                        }
+
+                        over "earth_clouds_realistic_n_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/place2dTexture19.outputs:result>
+                        }
+
+                        over "earth_clouds_realistic_o_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/place2dTexture20.outputs:result>
+                        }
+
+                        over "earth_clouds_realistic_r_1"
+                        {
+                            float2 inputs:st.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/place2dTexture21.outputs:result>
+                        }
+
+                        over "earth_clouds_realistic_mat_mtlx"
+                        {
+                            color3f inputs:diffuseColor.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_bc_1_mtlx.outputs:out>
+                            float3 inputs:normal.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_n_1_mtlx_offset.outputs:out>
+                            float inputs:opacity.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_o_1_mtlx.outputs:out>
+                            float inputs:roughness.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_r_1_mtlx.outputs:out>
+                        }
+
+                        over "earth_clouds_realistic_o_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/Lookup_st.outputs:out>
+                        }
+
+                        over "earth_clouds_realistic_n_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/Lookup_st.outputs:out>
+                        }
+
+                        over "earth_clouds_realistic_n_1_mtlx_scale"
+                        {
+                            float3 inputs:in1.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_n_1_mtlx.outputs:out>
+                        }
+
+                        over "earth_clouds_realistic_n_1_mtlx_offset"
+                        {
+                            float3 inputs:in1.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/earth_clouds_realistic_n_1_mtlx_scale.outputs:out>
+                        }
+
+                        over "earth_clouds_realistic_bc_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/Lookup_st.outputs:out>
+                        }
+
+                        over "earth_clouds_realistic_r_1_mtlx"
+                        {
+                            float2 inputs:texcoord.connect = </Root/Earth/geom/realistic/materials/usdpreviewsurface7sg/Lookup_st.outputs:out>
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

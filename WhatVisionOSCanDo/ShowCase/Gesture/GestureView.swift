@@ -5,10 +5,10 @@
 //  Created by renyujie on 2023/8/25.
 //
 
+import RealityBounds
 import RealityKit
 import RealityKitContent
 import SwiftUI
-import RealityBounds
 
 enum GestureToggles {
     case null, tap, drag, longPress, magnify, rotate, rotate3D
@@ -23,9 +23,23 @@ struct GestureView: View {
         VStack {
             RealityView { content in
                 do {
+                    let entity = try await Entity(named: "Scenes/Gesture-Earth", in: realityKitContentBundle)
+                    content.add(entity)
+                } catch {
+                    print("load entity error, error is \(error)")
+                }
+            }
+            .gesture(enabledGesture == .drag ? DragGesture().targetedToAnyEntity()
+                .onChanged { value in
+                    let location = value.convert(value.gestureValue.location3D, from: .global, to: value.entity.parent!)
+                    value.entity.setPosition(location, relativeTo: value.entity.parent)
+                } : nil)
+
+            RealityView { content in
+                do {
                     let entity = try await Entity(named: "Scenes/Gesture", in: realityKitContentBundle)
                     content.add(entity)
-                    content.add(BoundsVisualizer(bounds: [0.95,0.95,0.95]))
+                    content.add(BoundsVisualizer(bounds: [0.95, 0.95, 0.95]))
                 } catch {
                     print("load entity error, error is \(error)")
                 }
@@ -33,12 +47,13 @@ struct GestureView: View {
                 let root = content.entities.first
                 let moon = root?.findEntity(named: "Moon")
                 let sun = root?.findEntity(named: "Sun")
+
                 moon?.components[OpacityComponent.self]?.opacity = isNight ? 1.0 : 0.0
                 moon?.scale = .init(x: scale, y: scale, z: scale)
                 sun?.components[OpacityComponent.self]?.opacity = isNight ? 0.0 : 1.0
                 sun?.scale = .init(x: scale, y: scale, z: scale)
             }
-            .gesture(enabledGesture == .tap ? TapGesture().targetedToAnyEntity().onEnded { event in
+            .gesture(enabledGesture == .tap ? TapGesture().targetedToAnyEntity().onEnded { _ in
                 print("TapGesture ended")
                 isNight = !isNight
             } : nil)

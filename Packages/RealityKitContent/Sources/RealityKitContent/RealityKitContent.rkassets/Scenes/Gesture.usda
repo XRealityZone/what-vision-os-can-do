@@ -7,8 +7,8 @@
 
 def Xform "Root"
 {
+    reorder nameChildren = ["Moon", "Earth", "Sun"]
     def "Moon" (
-        active = true
         references = @../Models/Moon.usdz@
     )
     {
@@ -38,19 +38,69 @@ def Xform "Root"
         {
             uniform token info:id = "RealityKit.HierarchicalFade"
         }
+
+        def RealityKitCustomComponent "RealityKitContent_MoonComponent"
+        {
+            uniform token info:id = "RealityKitContent.MoonComponent"
+        }
     }
 
-    def "Sun" (
-        prepend references = @../Models/Sun.usdz@
+    def "Earth" (
+        references = @../Models/Earth.usdz@
     )
     {
         float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (0.23555335, 0, 0.0015026187)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitCustomComponent "RealityKitContent_EarthComponent"
+        {
+            uniform token info:id = "RealityKitContent.EarthComponent"
+        }
+
+        def RealityKitComponent "InputTarget"
+        {
+            uniform token info:id = "RealityKit.InputTarget"
+        }
 
         def RealityKitComponent "HierarchicalFade"
         {
             uniform token info:id = "RealityKit.HierarchicalFade"
-            float opacity = 0
+            float opacity = 1
+        }
+
+        def RealityKitComponent "Collider"
+        {
+            uint group = 1
+            uniform token info:id = "RealityKit.Collider"
+            uint mask = 4294967295
+            token type = "Default"
+
+            def RealityKitStruct "Shape"
+            {
+                float3 extent = (0.20499998, 0.205, 0.20500001)
+                token shapeType = "Box"
+
+                def RealityKitStruct "pose"
+                {
+                    float3 position = (0.00004060194, 0, 0.00011316314)
+                }
+            }
+        }
+    }
+
+    def "Sun" (
+        active = true
+        references = @../Models/Sun.usdz@
+    )
+    {
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-0.2196018, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitCustomComponent "RealityKitContent_SunComponent"
+        {
+            uniform token info:id = "RealityKitContent.SunComponent"
         }
 
         def RealityKitComponent "InputTarget"
@@ -63,19 +113,23 @@ def Xform "Root"
             uint group = 1
             uniform token info:id = "RealityKit.Collider"
             uint mask = 4294967295
-            token type = "Trigger"
+            token type = "Default"
 
             def RealityKitStruct "Shape"
             {
                 float3 extent = (0.2, 0.2, 0.19999999)
-                float radius = 0.1
-                token shapeType = "Sphere"
+                token shapeType = "Box"
 
                 def RealityKitStruct "pose"
                 {
                     float3 position = (3.7252903e-8, 0, 4.8428774e-8)
                 }
             }
+        }
+
+        def RealityKitComponent "HierarchicalFade"
+        {
+            uniform token info:id = "RealityKit.HierarchicalFade"
         }
     }
 }
