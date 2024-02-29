@@ -105,6 +105,6 @@ struct GestureView: View {
     }
 }
 
-#Preview {
+#Preview("Volume", windowStyle: .volumetric) {
     GestureView()
 }
