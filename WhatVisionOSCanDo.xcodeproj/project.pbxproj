@@ -16,7 +16,6 @@
 		BD3B39F42A891CBD00B8FCE9 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BD3B39F32A891CBD00B8FCE9 /* sample.mp4 */; };
 		BD5640742A88C1080001856F /* TrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5640732A88C1080001856F /* TrackingModel.swift */; };
 		BD67E1482A83DF0B00EADBB1 /* ShowCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD67E1472A83DF0B00EADBB1 /* ShowCase.swift */; };
-		BD684A512AEB3B3200A88C4B /* RealityBounds in Frameworks */ = {isa = PBXBuildFile; productRef = BD684A502AEB3B3200A88C4B /* RealityBounds */; };
 		BDA935D92A89A41500D2D675 /* PlayTogtherActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935D82A89A41500D2D675 /* PlayTogtherActivity.swift */; };
 		BDA935DB2A89C84C00D2D675 /* PlayTogtherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DA2A89C84C00D2D675 /* PlayTogtherManager.swift */; };
 		BDA935DD2A89DF4800D2D675 /* PlayTogtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935DC2A89DF4800D2D675 /* PlayTogtherView.swift */; };
@@ -24,7 +23,7 @@
 		BDA935E22A8A633200D2D675 /* HandTrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA935E12A8A633200D2D675 /* HandTrackingModel.swift */; };
 		BDC7AD332A85BA17005973D9 /* WorldSceningTrackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD322A85BA17005973D9 /* WorldSceningTrackingModel.swift */; };
 		BDC7AD362A868138005973D9 /* GeometrySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC7AD352A868138005973D9 /* GeometrySource.swift */; };
-		BDFCF0202A8282FA00D7B9FD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */; };
+		BDFCF0202A8282FA00D7B9FD /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */; settings = {ATTRIBUTES = (Required, ); }; };
 		BDFCF0222A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0212A8282FA00D7B9FD /* WhatVisionOSCanDoApp.swift */; };
 		BDFCF0242A8282FA00D7B9FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0232A8282FA00D7B9FD /* Home.swift */; };
 		BDFCF0262A8282FA00D7B9FD /* WorldSceningImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFCF0252A8282FA00D7B9FD /* WorldSceningImmersiveView.swift */; };
@@ -75,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD684A512AEB3B3200A88C4B /* RealityBounds in Frameworks */,
 				BDFCF0202A8282FA00D7B9FD /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +255,6 @@
 			name = WhatVisionOSCanDo;
 			packageProductDependencies = (
 				BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */,
-				BD684A502AEB3B3200A88C4B /* RealityBounds */,
 			);
 			productName = WhatVisionOSCanDo;
 			productReference = BDFCF01A2A8282FA00D7B9FD /* WhatVisionOSCanDo.app */;
@@ -288,7 +285,6 @@
 			);
 			mainGroup = BDFCF0112A8282FA00D7B9FD;
 			packageReferences = (
-				BD684A4F2AEB3B3200A88C4B /* XCRemoteSwiftPackageReference "RealityBounds" */,
 			);
 			productRefGroup = BDFCF01B2A8282FA00D7B9FD /* Products */;
 			projectDirPath = "";
@@ -540,23 +536,7 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		BD684A4F2AEB3B3200A88C4B /* XCRemoteSwiftPackageReference "RealityBounds" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/IvanMathy/RealityBounds";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		BD684A502AEB3B3200A88C4B /* RealityBounds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BD684A4F2AEB3B3200A88C4B /* XCRemoteSwiftPackageReference "RealityBounds" */;
-			productName = RealityBounds;
-		};
 		BDFCF01F2A8282FA00D7B9FD /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;

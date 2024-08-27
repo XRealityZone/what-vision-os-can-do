@@ -8,7 +8,6 @@
 import RealityKit
 import RealityKitContent
 import SwiftUI
-import RealityBounds
 
 enum GestureToggles {
     case null, tap, drag, longPress, magnify, rotate, rotate3D
@@ -25,7 +24,6 @@ struct GestureView: View {
                 do {
                     let entity = try await Entity(named: "Scenes/Gesture", in: realityKitContentBundle)
                     content.add(entity)
-                    content.add(BoundsVisualizer(bounds: [0.95,0.95,0.95]))
                 } catch {
                     print("load entity error, error is \(error)")
                 }
